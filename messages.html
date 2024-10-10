@@ -1,0 +1,298 @@
+<html><head>
+<title>SocialSphere - Messages</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f3f3f3;
+    --text-color: #333;
+    --highlight-color: #ff6b6b;
+    --border-color: #e1e1e1;
+  }
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--highlight-color);
+  }
+  
+  .messages-container {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+  
+  .conversation-list {
+    width: 30%;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    max-height: 600px;
+  }
+  
+  .conversation {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .conversation:hover, .conversation.active {
+    background-color: #f0f7ff;
+  }
+  
+  .conversation-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .conversation-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .conversation-name {
+    font-weight: bold;
+  }
+  
+  .conversation-preview {
+    font-size: 0.9em;
+    color: #777;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .chat-area {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-header {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+  }
+  
+  .chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    max-height: 450px;
+  }
+  
+  .message {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message-content {
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .message.received .message-content {
+    background-color: #f1f0f0;
+    align-self: flex-start;
+  }
+  
+  .message.sent .message-content {
+    background-color: var(--primary-color);
+    color: white;
+    align-self: flex-end;
+  }
+  
+  .message-time {
+    font-size: 0.8em;
+    color: #777;
+    align-self: flex-end;
+  }
+  
+  .chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .chat-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+  
+  .chat-input button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .chat-input button:hover {
+    background-color: #3a7bc8;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">SocialSphere</div>
+      <div class="nav-links">
+        <a href="Home.html
+        <a href="profile.html
+        <a href="messages.html
+        <a href="notifications.html
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="messages-container">
+      <div class="conversation-list">
+        <div class="conversation active">
+          <div class="conversation-header">
+            <img class="conversation-avatar" src="mika.avif" alt="mika's avatar" width="40" height="40">
+            <div class="conversation-name">sir eduard</div>
+          </div>
+          <div class="conversation-preview">humana kag buhat??.</div>
+        </div>
+        <div class="conversation">
+          <div class="conversation-header">
+            <img class="conversation-avatar" src="richelyn.jfif" alt="richelyn's avatar" width="40" height="40">
+            <div class="conversation-name">richelyn</div>
+          </div>
+          <div class="conversation-preview">gwapa .</div>
+        </div>
+        <div class="conversation">
+          <div class="conversation-header">
+            <img class="conversation-avatar" src="arlene.jpg" alt="arlene's avatar" width="40" height="40">
+            <div class="conversation-name">arlene</div>
+          </div>
+          <div class="conversation-preview">kapoya ani</div>
+        </div>
+      </div>
+      <div class="chat-area">
+        <div class="chat-header">
+          <img class="conversation-avatar" src="sahara.jfif" alt="sahara's avatar" width="40" height="40">
+          <div class="conversation-name">sahara</div>
+        </div>
+        <div class="chat-messages">
+          <div class="message received">
+            <div class="message-content">Hey, how's it going? Did you see the latest update on our project?</div>
+            <div class="message-time">10:30 AM</div>
+          </div>
+          <div class="message sent">
+            <div class="message-content">Hi John! I'm doing well, thanks. Yes, I did see the update. It looks great!</div>
+            <div class="message-time">10:32 AM</div>
+          </div>
+          <div class="message received">
+            <div class="message-content">Awesome! I'm glad you like it. Do you think we should add any more features?</div>
+            <div class="message-time">10:33 AM</div>
+          </div>
+          <div class="message sent">
+            <div class="message-content">I think it's pretty solid as is, but maybe we could consider adding a dark mode? What do you think?</div>
+            <div class="message-time">10:35 AM</div>
+          </div>
+          <div class="message received">
+            <div class="message-content">That's a great idea! Let's discuss it in our next team meeting.</div>
+            <div class="message-time">10:36 AM</div>
+          </div>
+        </div>
+        <div class="chat-input">
+          <input type="text" placeholder="Type a message...">
+          <button>Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Add click event listeners to conversations
+    document.querySelectorAll('.conversation').forEach(conv => {
+      conv.addEventListener('click', function() {
+        document.querySelectorAll('.conversation').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        
+        // In a real app, we would load the actual conversation here
+        alert('Switched to conversation with ' + this.querySelector('.conversation-name').textContent);
+      });
+    });
+    
+    // Add functionality to the send button
+    document.querySelector('.chat-input button').addEventListener('click', function() {
+      const input = document.querySelector('.chat-input input');
+      const message = input.value.trim();
+      
+      if (message) {
+        const chatMessages = document.querySelector('.chat-messages');
+        const newMessage = document.createElement('div');
+        newMessage.className = 'message sent';
+        newMessage.innerHTML = `
+          <div class="message-content">${message}</div>
+          <div class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+        `;
+        chatMessages.appendChild(newMessage);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        input.value = '';
+      }
+    });
+    
+    // Allow sending message with Enter key
+    document.querySelector('.chat-input input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        document.querySelector('.chat-input button').click();
+      }
+    });
+  </script>
+</body></html>

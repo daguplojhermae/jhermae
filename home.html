@@ -1,0 +1,180 @@
+<html><head>
+<title>Social Media Feed</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .post {
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .username {
+    font-weight: bold;
+  }
+  .timestamp {
+    color: #65676B;
+    font-size: 0.9em;
+    margin-left: 10px;
+  }
+  .post-content {
+    margin-bottom: 10px;
+  }
+  .post-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .post-actions {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e4e6eb;
+    padding-top: 10px;
+  }
+  .action-button {
+    background: none;
+    border: none;
+    color: #65676B;
+    font-size: 0.9em;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .action-button:hover {
+    background-color: #F2F3F5;
+  }
+  .new-post {
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .new-post textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    padding: 10px;
+    font-size: 1em;
+    outline: none;
+  }
+  .post-button {
+    background-color: #1877F2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    float: right;
+    cursor: pointer;
+  }
+  .post-button:hover {
+    background-color: #166FE5;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="new-post">
+      <textarea placeholder="What's on your mind?"></textarea>
+      <button class="post-button">Post</button>
+    </div>
+    <div class="post">
+      <div class="post-header">
+        <img src="pf.jpg" alt="User avatar" class="avatar">
+        <span class="username">Jhermae Daguplo</span>
+        <span class="timestamp">2h ago</span>
+      </div>
+      <div class="post-content">
+        <p>Just finished a 5k run! Feeling accomplished and energized. 🏃‍♀️💪</p>
+        <img src="run.jpg" alt="Person running on a trail" class="post-image" width="600" height="400">
+      </div>
+      <div class="post-actions">
+        <button class="action-button">👍 Like</button>
+        <button class="action-button">💬 Comment</button>
+        <button class="action-button">➡️ Share</button>
+      </div>
+    </div>
+    <div class="post">
+      <div class="post-header">
+        <img src="jhonny.jfif" alt="User avatar" class="avatar">
+        <span class="username">jhonny</span>
+        <span class="timestamp">5h ago</span>
+      </div>
+      <div class="post-content">
+        <p>Just tried this amazing new restaurant downtown. The sushi was out of this world! 🍣😍</p>
+        <img src="rolls.jfif" alt="Plate of colorful sushi rolls" class="post-image" width="600" height="400">
+      </div>
+      <div class="post-actions">
+        <button class="action-button">👍 Like</button>
+        <button class="action-button">💬 Comment</button>
+        <button class="action-button">➡️ Share</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  const postButton = document.querySelector('.post-button');
+  const textarea = document.querySelector('.new-post textarea');
+  const container = document.querySelector('.container');
+
+  postButton.addEventListener('click', () => {
+    const content = textarea.value.trim();
+    if (content) {
+      const newPost = createPost(content);
+      container.insertBefore(newPost, container.children[1]);
+      textarea.value = '';
+    }
+  });
+
+  function createPost(content) {
+    const post = document.createElement('div');
+    post.className = 'post';
+    post.innerHTML = `
+      <div class="post-header">
+        <img src="pf.jpg" alt="Your avatar" class="avatar">
+        <span class="username">You</span>
+        <span class="timestamp">Just now</span>
+      </div>
+      <div class="post-content">
+        <p>${content}</p>
+      </div>
+      <div class="post-actions">
+        <button class="action-button">👍 Like</button>
+        <button class="action-button">💬 Comment</button>
+        <button class="action-button">➡️ Share</button>
+      </div>
+    `;
+    return post;
+  }
+
+  // Add like functionality
+  container.addEventListener('click', (e) => {
+    if (e.target.classList.contains('action-button') && e.target.textContent.includes('Like')) {
+      e.target.textContent = e.target.textContent.includes('1') ? '👍 Like' : '👍 Like (1)';
+    }
+  });
+});
+</script>
+</body></html>
